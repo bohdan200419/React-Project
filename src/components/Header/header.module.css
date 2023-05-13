@@ -1,0 +1,9 @@
+.header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation{
+    display: flex;
+    column-gap: 50px;
+}

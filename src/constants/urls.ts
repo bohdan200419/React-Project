@@ -1,9 +1,9 @@
-import {axiosService} from "../services/axios.service";
 
-const baseURL = 'https://api.themoviedb.org/3/discover/movie'
 
+const baseURL = 'https://api.themoviedb.org/3'
 const urls = {
-
+    genre:'genre/movie/list?language=en',
+    search:'/search/keyword?query='
 }
 
 
