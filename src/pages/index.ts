@@ -1,2 +1,3 @@
-export * from './Genre'
-export * from './AllFilms'
+export * from './GenresPage'
+export * from './AllFilmsPage'
+export * from './AboutOfFilmPage'

@@ -15,7 +15,7 @@ const initialState: IState = {
     genres: [],
     trigger: false
 }
-const getAllGenres = createAsyncThunk<IGenres<IGenre[]>, undefined>(
+const getAllGenres = createAsyncThunk<IGenres<IGenre[]>, void>(
     'genreSlice/getAllGenres',
     async (_, { rejectWithValue }) => {
         try {

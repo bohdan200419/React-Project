@@ -1,9 +1,23 @@
 .header{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
 }
-
+.logo img{
+    margin-left: 20px;
+    width: 60px;
+}
 .navigation{
     display: flex;
     column-gap: 50px;
+}
+.navigation a{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+.user img{
+    margin-right: 20px;
+    width: 50px;
 }

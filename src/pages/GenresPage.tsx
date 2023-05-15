@@ -1,7 +1,8 @@
 import React from 'react';
-import {Genres} from "../components/Genres/Genres";
+import {Genres} from "../components/Genres";
 
-const Genre = () => {
+
+const GenresPage = () => {
     return (
         <div>
             <Genres/>
@@ -9,4 +10,4 @@ const Genre = () => {
     );
 };
 
-export {Genre};
+export {GenresPage};
