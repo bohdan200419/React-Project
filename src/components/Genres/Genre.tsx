@@ -1,7 +1,9 @@
 import React from 'react';
 import {FC} from "react";
-import {IGenre} from "../../interfaces";
 import {Link} from "react-router-dom";
+
+import {IGenre} from "../../interfaces";
+import './genres.css'
 
 
 interface IProps {
@@ -12,8 +14,7 @@ const Genre: FC<IProps> = ({genre}) => {
 
 
     return (
-        <div>
-            <p>{genre.id}</p>
+        <div className={'genreWrap'}>
             <Link to={`${genre.id.toString()}`}>{genre.name}</Link>
         </div>
     );

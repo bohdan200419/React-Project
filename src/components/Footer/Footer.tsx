@@ -2,9 +2,9 @@ import React from 'react';
 import './Footer.css'
 const Footer = () => {
     return (
-        <div className={'footer'}>
+        <footer className={'footer'}>
             Designed by Yura Rudkevych
-        </div>
+        </footer>
     );
 };
 

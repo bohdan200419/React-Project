@@ -1,10 +1,10 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IMovie, IMovieResponse} from "../../interfaces";
+import {IAboutMovie, IGenre} from "../../interfaces";
 import {movieService} from "../../services";
 
 
 interface IState {
-    movie:IMovie|null
+    movie:IAboutMovie<IGenre[]>| null
 }
 const initialState:IState ={
     movie:null
@@ -24,7 +24,7 @@ const slice = createSlice({
     }
 })
 
-const getMovieAsync = createAsyncThunk<IMovie, string>(
+const getMovieAsync = createAsyncThunk<IAboutMovie<IGenre[]>, string>(
     'movieSlice/getAllMovies',
     async (id, {rejectWithValue}) => {
         try {

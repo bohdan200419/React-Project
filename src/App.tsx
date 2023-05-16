@@ -9,12 +9,10 @@ function App() {
     return (
 
         <Routes>
-            <Route path={'/'} element={<MainLayouts/>}>
+            <Route  path={'/'} element={<MainLayouts/>}>
                 <Route path={'genre'} element={<GenresPage/>}/>
                 <Route path={'allfilms'} element={<AllFilmsPage/>}/>
                 <Route path={'/aboutOfFilm'} element={<AboutOfFilmPage/>}/>
-
-
             </Route>
         </Routes>
     );

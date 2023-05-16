@@ -13,9 +13,14 @@
     column-gap: 50px;
 }
 .navigation a{
+    font-weight: 700;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     color: #000;
+}
+.navigation a:hover{
+    color: #ff232f;
+    transition: color .25s;
 }
 .user img{
     margin-right: 20px;

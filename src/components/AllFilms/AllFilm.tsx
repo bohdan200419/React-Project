@@ -19,7 +19,7 @@ const AllFilm:FC<IProps> = ({results}) => {
     return (
     <div className={css.wrapperMovie} onClick={aboutFilm}>
         <div>
-            <img src={'https://image.tmdb.org/t/p/original'+`${results.poster_path}`} alt={results.original_title}/>
+            <img src={`https://image.tmdb.org/t/p/original${results.poster_path}`} alt={results.original_title}/>
             <h4>{results.original_title}</h4>
         </div>
     </div>
