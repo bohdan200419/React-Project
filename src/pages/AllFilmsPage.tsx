@@ -1,8 +1,10 @@
 import React from 'react';
-import {AllFilms} from "../components/AllFilms";
-import css from './AllFilmsPage.module.css'
+
 import {useAppDispatch, useAppSelector} from "../hooks";
-import {movieActions} from "../redux/slices/movie.slice";
+import {movieActions} from "../redux";
+import {AllFilms} from "../components";
+import './AllFilmsPage.css'
+
 
 const AllFilmsPage = () => {
     const {page} = useAppSelector(state => state.movie);
@@ -17,10 +19,10 @@ const AllFilmsPage = () => {
     return (
         <div>
             <AllFilms/>
-            <div className={css.pagination}>
-                <button className={css.button} disabled={page<=1} onClick={dec}>Prev Page</button>
-                {page}
-                <button className={css.button}  onClick={inc}>Next page Page</button>
+            <div className={'pagination'}>
+                <button className={'button'} disabled={page<=1} onClick={dec}>Prev Page</button>
+                {<p className={'count'}>{page}</p>}
+                <button className={'button'}  onClick={inc}>Next Page</button>
             </div>
         </div>
     );

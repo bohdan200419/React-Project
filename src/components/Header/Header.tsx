@@ -10,6 +10,7 @@ const Header = () => {
         <header className={css.header}>
             <div className={css.logo}>{<img src={logo} alt="Movies"/>}</div>
             <div className={css.navigation}>
+                <Link to={'/'}>Main Page</Link>
                 <Link to={'genre'}>Genre</Link>
                 <Link to={'allfilms'}>All Films</Link>
             </div>

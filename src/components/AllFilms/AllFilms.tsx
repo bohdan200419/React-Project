@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import { AllFilm } from "./AllFilm";
-import css from './allFilm.module.css'
+import './allFilm.css'
 import { movieActions } from "../../redux";
 
-const AllFilms = () => {
+
+const AllFilms:FC = () => {
     const dispatch = useAppDispatch();
     const { page, movies } = useAppSelector(state => state.movie);
 
@@ -16,7 +17,7 @@ const AllFilms = () => {
 
 
     return (
-        <div className={css.wrapperAllMovies}>
+        <div className={'wrapperAllMovies'}>
 
             {
                 movies && movies.map(value => <AllFilm key={value.id} results={value} />)

@@ -4,10 +4,10 @@ import {movieService} from "../../services";
 
 
 interface IState {
-    movie:IAboutMovie<IGenre[]>| null
+    movie:IAboutMovie<IGenre[]>[]
 }
 const initialState:IState ={
-    movie:null
+    movie:[]
 }
 
 
@@ -18,8 +18,7 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(getMovieAsync.fulfilled, (state, action) => {
-                console.log(action.payload);
-                state.movie = action.payload
+                state.movie.splice(0,1,action.payload)
             })
     }
 })

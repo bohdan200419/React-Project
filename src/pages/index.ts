@@ -1,3 +1,5 @@
 export * from './GenresPage'
 export * from './AllFilmsPage'
 export * from './AboutOfFilmPage'
+export * from './MainPage'
+export * from './findedMoviesPage'

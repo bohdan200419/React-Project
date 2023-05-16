@@ -1,10 +1,10 @@
 import React from 'react';
 import {Genres} from "../components/Genres";
-
+import './genresPage.css'
 
 const GenresPage = () => {
     return (
-        <div>
+        <div className={'genresWrap'}>
             <Genres/>
         </div>
     );

@@ -1,0 +1,31 @@
+.mainPageWrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.searchForm{
+    margin-top: 100px;
+    display: flex;
+    column-gap: 10px;
+    border-radius: 10px;
+}
+
+.input{
+    background: rgba(255,255,255,70%);
+    padding: 15px;
+    border-radius: 10px;
+    width: 350px;
+    border: none;
+}
+
+.formBtn{
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    transition: color .2s;
+}
+.formBtn:hover{
+    color: #ff232f;
+}

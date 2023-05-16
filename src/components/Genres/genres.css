@@ -4,12 +4,15 @@
     column-gap: 100px;
     row-gap: 70px;
     justify-content: center;
+    align-items: center;
+
 }
 .genreWrap{
     width: 150px;
+
 }
 .genreWrap a{
-    color: #000000;
+    color: #ffffff;
 }
 .genreWrap a:hover{
     color: #ff232f;

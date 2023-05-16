@@ -1,0 +1,7 @@
+.genresWrap{
+    height: 86.4vh;
+    background: url("../layouts/rows-red-seats-theater.jpg");
+    background-size: cover;
+
+    background: rgba(0,0,0,30%);
+}

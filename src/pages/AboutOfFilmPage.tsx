@@ -1,9 +1,9 @@
 import React from 'react';
 import {AboutsOfFilm} from "../components";
-
+import './aboutOfFilm.css'
 const AboutOfFilmPage = () => {
     return (
-        <div>
+        <div className={'wrapper'}>
             <AboutsOfFilm/>
         </div>
     );
