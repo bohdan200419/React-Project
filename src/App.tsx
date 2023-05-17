@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import {MainLayouts} from "./layouts";
-import {AllFilmsPage, GenresPage, AboutOfFilmPage, MainPage, FindedMoviesPage} from "./pages";
+import {AllFilmsPage, GenresPage, AboutOfFilmPage, MainPage, FindedMoviesPage, MoviesByGenre} from "./pages";
 import './Reset.css'
 
 
@@ -16,6 +16,7 @@ function App() {
                 <Route path={'allfilms'} element={<AllFilmsPage/>}/>
                 <Route path={'/aboutOfFilm'} element={<AboutOfFilmPage/>}/>
                 <Route path={'findedMovies'} element={<FindedMoviesPage/>}/>
+                <Route path={':id'} element={<MoviesByGenre/>}/>
             </Route>
         </Routes>
     );

@@ -17,7 +17,6 @@ const Genres :FC = () => {
     return (
         <div className={'genresWrap'}>
             {
-
                 genres.map(value => <Genre key={value.id} genre={value}/>)
             }
             <Outlet/>

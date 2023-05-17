@@ -1,3 +1,10 @@
+.mainWrapper{
+    background: rgba(0,0,0,80%);
+}
+.bg{
+    height: 86.4vh;
+    background: rgba(0,0,0,85%);
+}
 .pagination{
     display: flex;
     justify-content: center;

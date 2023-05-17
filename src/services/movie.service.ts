@@ -11,6 +11,7 @@ const movieService = {
     getAllMovie:(page:string)=> axiosService.get<IMovieResponse<IMovie[]>>(`${urls.allMovie}${page}`),
     aboutOfFilmById:(id:string)=> axiosService.get<IAboutMovie<IGenre[]>>(`${urls.findById}/${id}`),
     searchMovie:(name:string,page:string)=> axiosService.get<ISearch<ISearchResult[]>>(`${urls.search}${name}&page=${page}`),
-    getSearchedMovies:(id:string)=>axiosService.get<IMovie>(`${urls.findById}/${id}`)
+    getSearchedMovies:(id:string)=>axiosService.get<IMovie>(`${urls.findById}/${id}`),
+    findByGenre:(id:string,page:string)=> axiosService.get<IMovieResponse<IMovie[]>>(`${urls.findByGenre}${id}&page=${page}`)
 }
 export {movieService}

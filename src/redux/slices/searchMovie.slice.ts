@@ -2,14 +2,14 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {movieService} from "../../services";
 import {IMovie, ISearchResult} from "../../interfaces";
-import {AxiosError} from 'axios';
+
 
 
 interface IState {
     movies: ISearchResult[],
     page: number,
     findedMovies: IMovie[]
-    trigger: boolean;
+
     name: string
     maxPage: string
 
@@ -19,7 +19,6 @@ const initialState: IState = {
     movies: [],
     page: 1,
     findedMovies: [],
-    trigger: true,
     name: '',
     maxPage: ''
 

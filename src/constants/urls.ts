@@ -5,7 +5,8 @@ const urls = {
     genre:'/genre/movie/list?language=en',
     search:'/search/keyword?query=',
     allMovie:'/discover/movie?page=',
-    findById:'/movie'
+    findById:'/movie',
+    findByGenre:'/discover/movie?with_genres='
 }
 
 

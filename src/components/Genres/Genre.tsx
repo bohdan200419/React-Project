@@ -15,9 +15,11 @@ const Genre: FC<IProps> = ({genre}) => {
 
     return (
         <div className={'genreWrap'}>
-            <Link to={`${genre.id.toString()}`}>{genre.name}</Link>
+                <Link to={`/${genre.id.toString()}`}>{genre.name}</Link>
         </div>
-    );
+);
 }
 
-export {Genre};
+export {
+    Genre
+};

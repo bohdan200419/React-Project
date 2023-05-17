@@ -22,14 +22,12 @@ const FindedMoviesPage = () => {
     }
     return (
 
-        <div>
+        <div className={'bg'}>
             <div className={'wrapperAllMovies'}>
                 {
                     findedMovies.map((value, index) => <AllFilm results={value} key={value.id}/>)
                 }
             </div>
-
-
             <div className='pagination'>
                 <button className={'button'} disabled={page <= 1} onClick={dec}>Prev Page</button>
                 {

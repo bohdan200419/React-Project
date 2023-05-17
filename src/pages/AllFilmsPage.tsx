@@ -17,7 +17,7 @@ const AllFilmsPage = () => {
     }
 
     return (
-        <div>
+        <div className={'mainWrapper'}>
             <AllFilms/>
             <div className={'pagination'}>
                 <button className={'button'} disabled={page<=1} onClick={dec}>Prev Page</button>
