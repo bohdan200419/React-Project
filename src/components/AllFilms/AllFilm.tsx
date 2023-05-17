@@ -4,24 +4,24 @@ import {useNavigate} from "react-router-dom";
 import './allFilm.css'
 
 interface IProps{
-    results:IMovie
+    results:IMovie|null
 
 }
 const AllFilm:FC<IProps> = ({results}) => {
     const navigate = useNavigate();
-
     const aboutFilm = () => {
         navigate({
             pathname:'/aboutOfFilm',
             search: `?id=${results?.id}`
         })
     }
-
+    const hasPhoto = results && results.poster_path
+    const photo = hasPhoto?`https://image.tmdb.org/t/p/original${results?.poster_path}`:'https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article.png'
     return (
     <div className={'wrapperMovie'} onClick={aboutFilm}>
         <div>
-            <img src={`https://image.tmdb.org/t/p/original${results.poster_path}`} alt={results.original_title}/>
-            <h4 className={'titleFilm'}>{results.original_title}</h4>
+                <img src={photo} alt={results?.original_title}/>
+            <h4 className={'titleFilm'}>{results?.original_title}</h4>
         </div>
     </div>
     );

@@ -16,8 +16,18 @@
 }
 .button:hover{
     cursor: pointer;
-    color:#FF232FFF;
-    border: 1px solid #FF232FFF;;
+    color:#5089ec;
+    border: 1px solid #5089ec;
+}
+button:disabled{
+    border: 1px solid gray;
+    color: gray;
+    cursor: not-allowed;
+}
+button:disabled:hover{
+    border: 1px solid gray;
+    color: gray;
+    cursor: not-allowed
 }
 .count{
     color: #FFF;
