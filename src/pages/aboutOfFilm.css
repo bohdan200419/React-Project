@@ -1,3 +1,9 @@
 .wrapper{
     height: 86.4vh;
 }
+.bg-dark{
+    background: rgba(0,0,0,80%);
+}
+.bg-light{
+    background: rgba(255,255,255,80%);
+}

@@ -2,8 +2,9 @@
     height: 86.4vh;
     display: flex;
     justify-content: center;
-    background: rgba(0,0,0,80%);
+
 }
+
 .searchForm{
     margin-top: 100px;
     display: flex;
@@ -12,20 +13,32 @@
 }
 
 .input{
-    background: rgba(255,255,255,70%);
     padding: 15px;
     border-radius: 10px;
     width: 350px;
     border: none;
 }
+.input-dark{
+    background: rgba(255,255,255,80%);
+
+}
+.input-light{
+    color: #FFFFFF;
+    background: rgba(0,0,0,80%);
+}
 
 .formBtn{
     cursor: pointer;
     font-size: 24px;
-    color: #ffffff;
     background: none;
     border: none;
     transition: color .2s;
+}
+.formBtn-dark{
+    color: #ffffff;
+}
+.formBtn-light{
+    color: #000000;
 }
 .formBtn:hover{
     color: #ff232f;

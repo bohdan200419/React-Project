@@ -4,7 +4,9 @@
     column-gap: 150px;
     justify-content: center;
     align-items: center;
+
 }
+
 .wrapImg img{
     -webkit-box-shadow: 0px 0px 41px 0px rgb(255, 255, 255);
     -moz-box-shadow: 0px 0px 41px 0px rgb(255, 255, 255);
@@ -13,6 +15,7 @@
 }
 .flex{
     display: flex;
+    align-items: center;
     column-gap: 15px;
 }
 .desc{
@@ -24,14 +27,23 @@
 p{
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    color: #ffffff;
-
 }
 h4{
-    color: white;
     font-size: 20px;
 }
+
 h6{
     font-size: 18px;
-    color: white;
 }
+.genresLink{
+    background: gray;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #ffffff;
+}
+.genresLink:hover{
+    top: 2px;
+    color: #ff232f;
+}
+

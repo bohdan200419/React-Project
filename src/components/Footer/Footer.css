@@ -1,6 +1,12 @@
-.footer{
-    background: rgba(0,0,0,85%);
+.footer-dark{
+    background: rgba(40,40,40);
     height: 50px;
     color: #fff;
     border-top: 1px solid #ffffff;
 }
+/*.footer-light{*/
+/*    background: rgba(0, 0, 0);*/
+/*    height: 50px;*/
+/*    color: #FFFFFF;*/
+/*    border-top: 1px solid #000000;*/
+/*}*/

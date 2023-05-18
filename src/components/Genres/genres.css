@@ -7,13 +7,20 @@
     align-items: center;
 
 }
-.genreWrap{
-    width: 150px;
-
-}
 .genreWrap a{
+    font-size: 20px;
+    text-decoration: underline;
+}
+.genre-dark a{
     color: #ffffff;
 }
+.genre-light a{
+    color: #000000;
+}
+.genreWrap{
+    width: 120px;
+}
+
 .genreWrap a:hover{
     color: #ff232f;
     transition: color .25s ;

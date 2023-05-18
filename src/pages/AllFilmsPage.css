@@ -1,10 +1,8 @@
-.mainWrapper{
-    background: rgba(0,0,0,80%);
-}
+
 .bg{
-    height: 86.4vh;
-    background: rgba(0,0,0,85%);
+    height: 100%;
 }
+
 .pagination{
     display: flex;
     justify-content: center;
@@ -14,17 +12,14 @@
 }
 .button{
     width: 160px;
-    border: 1px solid #ffffff;
     border-radius: 7px;
     height: 30px;
-    background: none;
-    color: white;
     transition: color .24s;
 }
 .button:hover{
     cursor: pointer;
-    color:#5089ec;
-    border: 1px solid #5089ec;
+    color:#ff232f;
+    border: 1px solid #ff232f;
 }
 button:disabled{
     border: 1px solid gray;
@@ -35,7 +30,4 @@ button:disabled:hover{
     border: 1px solid gray;
     color: gray;
     cursor: not-allowed
-}
-.count{
-    color: #FFF;
 }

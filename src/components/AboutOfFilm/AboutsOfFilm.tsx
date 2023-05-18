@@ -3,6 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 
 import {aboutOfFilmActions} from "../../redux";
 import  './aboutsOfFilm.css'
+import '../../mode.css'
 import {AboutOfFilm} from "./AboutOfFilm";
 
 
