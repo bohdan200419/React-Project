@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled, isPending} from "@reduxjs/toolkit";
 
 import {movieService} from "../../services";
 import {IMovie, ISearchResult} from "../../interfaces";
@@ -11,7 +11,8 @@ interface IState {
     findedMovies: IMovie[]
 
     name: string
-    maxPage: string
+    maxPage: string,
+    loading:boolean
 
 }
 
@@ -20,7 +21,8 @@ const initialState: IState = {
     page: 1,
     findedMovies: [],
     name: '',
-    maxPage: ''
+    maxPage: '',
+    loading:false
 
 }
 
@@ -60,6 +62,12 @@ const slice = createSlice({
                 state.findedMovies.push(payload);
             }
         })
+            .addMatcher(isPending(),state => {
+                state.loading = true
+            })
+            .addMatcher(isFulfilled(),state => {
+                state.loading = false
+            })
     }
 });
 
@@ -68,6 +76,7 @@ const searchFilm = createAsyncThunk(
     async ({name, page}: { name: string, page: string }, {rejectWithValue}) => {
         try {
             const {data} = await movieService.searchMovie(`${name}`, `${page}`)
+            await new Promise(resolve => setTimeout(resolve,700))
             console.clear();
             return data
         } catch (e) {
@@ -80,6 +89,7 @@ const findedMovies = createAsyncThunk(
     async (id: string, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getSearchedMovies(id)
+            await new Promise(resolve => setTimeout(resolve,1000))
             console.clear()
             return data
         } catch (error) {

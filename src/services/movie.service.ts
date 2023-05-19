@@ -1,7 +1,17 @@
 import {axiosService} from "./axios.service";
 
 import {urls} from "../constants";
-import {IAboutMovie, IGenre, IGenres, IMovie, IMovieResponse, ISearch, ISearchResult} from "../interfaces";
+import {
+    IAboutMovie,
+    IGenre,
+    IGenres,
+    IMovie,
+    IMovieResponse,
+    ISearch,
+    ISearchResult,
+    IVideo,
+    IVideoRes
+} from "../interfaces";
 
 
 
@@ -12,6 +22,7 @@ const movieService = {
     aboutOfFilmById:(id:string)=> axiosService.get<IAboutMovie<IGenre[]>>(`${urls.findById}/${id}`),
     searchMovie:(name:string,page:string)=> axiosService.get<ISearch<ISearchResult[]>>(`${urls.search}${name}&page=${page}`),
     getSearchedMovies:(id:string)=>axiosService.get<IMovie>(`${urls.findById}/${id}`),
-    findByGenre:(id:string,page:string)=> axiosService.get<IMovieResponse<IMovie[]>>(`${urls.findByGenre}${id}&page=${page}`)
+    findByGenre:(id:string,page:string)=> axiosService.get<IMovieResponse<IMovie[]>>(`${urls.findByGenre}${id}&page=${page}`),
+    getVideo:(id:string)=> axiosService.get<IVideoRes<IVideo[]>>(`${urls.videoById(id)}`)
 }
 export {movieService}
