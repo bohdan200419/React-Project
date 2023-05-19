@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 
 const initialState = {
-    mode: 1
+    mode: 2
 }
 const slice = createSlice({
         name: 'modeSlice',

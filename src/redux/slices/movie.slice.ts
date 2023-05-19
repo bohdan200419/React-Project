@@ -5,12 +5,14 @@ import {movieService} from "../../services";
 interface IState {
     movies: IMovie[],
     page: number,
+    popular:IMovie[],
     loading: boolean
 }
 
 const initialState: IState = {
     movies: [],
     page: 1,
+    popular:[],
     loading:false
 
 }
@@ -29,6 +31,18 @@ const getAllMoviesAsync = createAsyncThunk<IMovieResponse<IMovie[]>, number>(
         }
     }
 );
+const getPopular = createAsyncThunk<IMovieResponse<IMovie[]>,undefined>(
+    'getPopular/movieSlice',
+    async (_,{rejectWithValue})=>{
+        try {
+            const {data} = await movieService.getPopular()
+            return data
+        }catch (e) {
+            return rejectWithValue('Сервер не віповідає')
+        }
+    }
+)
+
 const slice = createSlice({
     name: 'movieSlice',
     initialState,
@@ -47,16 +61,21 @@ const slice = createSlice({
                 const {results} = action.payload
                 state.movies = results
             })
+            .addCase(getPopular.fulfilled,(state, action) => {
+                const {results} = action.payload
+                state.popular = results
+            })
             .addMatcher(isPending(), (state) => {
                 state.loading = true
             })
             .addMatcher(isFulfilled(),state => {
                 state.loading = false
             })
+
     }
 });
 
 
 const {actions, reducer: movieReducer} = slice
-const movieActions = {...actions, getAllMoviesAsync}
+const movieActions = {...actions, getAllMoviesAsync,getPopular}
 export {movieActions, movieReducer}

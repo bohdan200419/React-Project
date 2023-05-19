@@ -5,7 +5,8 @@ const urls = {
     allMovie: '/discover/movie?page=',
     findById: '/movie',
     findByGenre: '/discover/movie?with_genres=',
-    videoById: (id: string) => `/movie/${id}/videos`
+    videoById: (id: string) => `/movie/${id}/videos`,
+    popular:'/movie/popular'
 }
 
 
