@@ -7,7 +7,7 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 interface IProps{
     vote_average:number|undefined
 }
-const Rating:FC<IProps> = ({vote_average}) => {
+const StarsRating:FC<IProps> = ({vote_average}) => {
     const max = 10;
 
     return (
@@ -27,4 +27,4 @@ const Rating:FC<IProps> = ({vote_average}) => {
     );
 };
 
-export {Rating};
+export {StarsRating};

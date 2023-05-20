@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {searchActions} from "../redux";
-import {AllFilm, Loading} from "../components";
-import './AllFilmsPage.css'
-import '../mode.css'
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {searchActions} from "../../redux";
+import {PosterPreview, Loading} from "../../components";
+import '../MoviesPage/MoviesPage.css'
+import '../../mode.css'
 
 const FindedMoviesPage = () => {
     const {movies, findedMovies, page, name, maxPage, loading} = useAppSelector(state => state.searchFilm)
@@ -11,7 +12,7 @@ const FindedMoviesPage = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        movies && movies.map(value => dispatch(searchActions.findedMovies(value.id.toString())))
+        movies && movies.map(value => dispatch(searchActions.findMovies(value.id.toString())))
     }, [dispatch, movies, page])
 
     const inc = () => {
@@ -29,7 +30,7 @@ const FindedMoviesPage = () => {
                     <div className={`bg ${mode === 2 ? 'bg-dark' : 'bg-light'}`}>
                         <div className={'wrapperAllMovies'}>
                             {
-                                findedMovies.map((value, index) => <AllFilm results={value} key={value.id}/>)
+                                findedMovies.map((value) => <PosterPreview results={value} key={value.id}/>)
                             }
                         </div>
                         <div className='pagination'>

@@ -1,5 +1,5 @@
 export * from './genre.slice'
-export * from  './aboutOfFilm.slice'
+export * from './MovieInfo.slice'
 export * from  './movie.slice'
 export * from  './searchMovie.slice'
 export * from './mode.slice'

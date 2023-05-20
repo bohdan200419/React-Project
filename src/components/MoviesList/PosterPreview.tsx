@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {IMovie} from "../../interfaces";
 import {useNavigate} from "react-router-dom";
-import './allFilm.css'
+import './MoviesList.css'
 import {useAppSelector} from "../../hooks";
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 
 }
 
-const AllFilm: FC<IProps> = ({results}) => {
+const PosterPreview: FC<IProps> = ({results}) => {
     const {mode} = useAppSelector(state => state.mode)
     const navigate = useNavigate();
     const aboutFilm = () => {
@@ -30,4 +30,4 @@ const AllFilm: FC<IProps> = ({results}) => {
     );
 };
 
-export {AllFilm};
+export {PosterPreview};

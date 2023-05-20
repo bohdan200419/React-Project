@@ -1,13 +1,13 @@
 import {FC, useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 
-import {Genre} from "./Genre";
+import {GenreBadge} from "./GenreBadge";
 import {genreActions} from "../../redux";
 import {Outlet} from "react-router-dom";
 import './genres.css'
 
 
-const Genres :FC = () => {
+const GenreBadges :FC = () => {
     const dispatch = useAppDispatch();
     useEffect(()=>{
     dispatch(genreActions.getAllGenres())
@@ -17,11 +17,11 @@ const Genres :FC = () => {
     return (
         <div className={'genresWrap'}>
             {
-                genres.map(value => <Genre key={value.id} genre={value}/>)
+                genres.map(value => <GenreBadge key={value.id} genre={value}/>)
             }
             <Outlet/>
         </div>
     );
 };
 
-export {Genres};
+export {GenreBadges};

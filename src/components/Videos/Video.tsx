@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {useAppSelector} from "../../hooks";
-import '../AboutOfFilm/aboutsOfFilm.css'
+import '../MovieInfo/MoviesInfo.css'
 import '../../mode.css'
 
 
@@ -13,6 +13,7 @@ const Video: FC = () => {
             <div>
                 {!video?<p>Trailer Not Found</p>:
                     <iframe
+                        title={`Trailer`}
                         height={'500px'}
                         width={'700'}
                         src={`https://www.youtube.com/embed/${video}`}>

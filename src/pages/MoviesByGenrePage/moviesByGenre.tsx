@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useLocation} from "react-router-dom";
 
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {genreActions} from "../redux";
-import {AllFilm,Loading} from "../components";
-import './AllFilmsPage.css'
-import '../components/AllFilms/allFilm.css'
-import '../mode.css'
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {genreActions} from "../../redux";
+import {PosterPreview,Loading} from "../../components";
+import '../MoviesPage/MoviesPage.css'
+import '../../components/MoviesList/MoviesList.css'
+import '../../mode.css'
 
 
 const MoviesByGenre = () => {
@@ -21,7 +21,7 @@ const MoviesByGenre = () => {
 
     useEffect(() => {
         dispatch(genreActions.findByGenre({id, page}))
-    }, [dispatch, pathname, page])
+    }, [dispatch, pathname, page,id])
     return (
         <>
             {
@@ -29,7 +29,7 @@ const MoviesByGenre = () => {
                     <div className={`mainWrapper ${mode === 2 ? 'bg-dark' : 'bg-light'}`}>
                         <div className={'wrapperAllMovies'}>
                             {
-                                moviesByGenre.map(value => <AllFilm results={value} key={value.id}/>)
+                                moviesByGenre.map(value => <PosterPreview results={value} key={value.id}/>)
                             }
                         </div>
                         <div className={'pagination'}>

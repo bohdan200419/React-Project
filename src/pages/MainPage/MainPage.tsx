@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 
 import './mainPage.css'
-import '../mode.css'
+import '../../mode.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {movieActions, searchActions} from "../redux";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions, searchActions} from "../../redux";
 import {useNavigate} from "react-router-dom";
-import {Sliders} from "../components";
+import {Sliders} from "../../components";
 
 
 const MainPage = () => {

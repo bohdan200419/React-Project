@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, isFulfilled, isPending} from "@reduxjs/toolkit";
 
 import {movieService} from "../../services";
-import {IMovie, ISearchResult} from "../../interfaces";
+import {IMovie, ISearch, ISearchResult} from "../../interfaces";
 
 
 
@@ -56,7 +56,7 @@ const slice = createSlice({
             state.movies = results
 
         });
-        builder.addCase(findedMovies.fulfilled, (state, action) => {
+        builder.addCase(findMovies.fulfilled, (state, action) => {
             const payload = action.payload;
             if (!state.findedMovies.some(result => result.id === payload.id)) {
                 state.findedMovies.push(payload);
@@ -71,7 +71,7 @@ const slice = createSlice({
     }
 });
 
-const searchFilm = createAsyncThunk(
+const searchFilm = createAsyncThunk<ISearch<ISearchResult[]>,any>(
     'searchFilm/searchMovieSlice',
     async ({name, page}: { name: string, page: string }, {rejectWithValue}) => {
         try {
@@ -84,13 +84,13 @@ const searchFilm = createAsyncThunk(
         }
     }
 );
-const findedMovies = createAsyncThunk(
+const findMovies = createAsyncThunk<IMovie,any>(
     'findedMovies/searchMovieSlice',
     async (id: string, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getSearchedMovies(id)
-            await new Promise(resolve => setTimeout(resolve,1000))
-            console.clear()
+            console.log(data);
+            // console.clear()
             return data
         } catch (error) {
             return rejectWithValue('Сервер не відповідає');
@@ -101,6 +101,6 @@ const findedMovies = createAsyncThunk(
 
 const {reducer: searchReducer, actions} = slice
 
-const searchActions = {...actions, searchFilm, findedMovies}
+const searchActions = {...actions, searchFilm, findMovies}
 
 export {searchActions, searchReducer}

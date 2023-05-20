@@ -11,7 +11,7 @@ interface IProps {
     genre: IGenre
 }
 
-const Genre: FC<IProps> = ({genre}) => {
+const GenreBadge: FC<IProps> = ({genre}) => {
     const {mode} = useAppSelector(state => state.mode);
 
     return (
@@ -22,5 +22,5 @@ const Genre: FC<IProps> = ({genre}) => {
 }
 
 export {
-    Genre
+    GenreBadge
 };

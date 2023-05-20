@@ -2,13 +2,13 @@ import React, {FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 
 import {aboutOfFilmActions} from "../../redux";
-import './aboutsOfFilm.css'
+import './MoviesInfo.css'
 import '../../mode.css'
-import {AboutOfFilm} from "./AboutOfFilm";
+import {MovieInfo} from "./MovieInfo";
 import {Loading} from "../Loading";
 
 
-const AboutsOfFilm: FC = () => {
+const MoviesListCard: FC = () => {
     const dispatch = useAppDispatch();
 
     const {movie, loading} = useAppSelector(state => state.aboutOfFilm)
@@ -27,11 +27,11 @@ const AboutsOfFilm: FC = () => {
         <div>
             {
                 loading ? <Loading loading={loading}/> :
-                    movie && movie.map(value => <AboutOfFilm key={value.id} movie={value}/>)
+                    movie && movie.map(value => <MovieInfo key={value.id} movie={value}/>)
             }
         </div>
 
     );
 };
 
-export {AboutsOfFilm};
+export {MoviesListCard};

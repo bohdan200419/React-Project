@@ -1,24 +1,27 @@
+import {Link} from "react-router-dom";
 import React, {FC, useEffect} from 'react';
 
-import {Rating} from "./Rating";
 import {IAboutMovie, IGenre} from "../../interfaces";
-import './aboutsOfFilm.css'
-import {Link} from "react-router-dom";
+import './MoviesInfo.css'
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {aboutOfFilmActions} from "../../redux";
 import {Video} from "../Videos";
+import {StarsRating} from "../StarsRating";
 
 
 interface IProps {
     movie: IAboutMovie<IGenre[]>
 }
 
-const AboutOfFilm: FC<IProps> = ({movie}) => {
+const MovieInfo: FC<IProps> = ({movie}) => {
+
     const {mode} = useAppSelector(state => state.mode)
     const dispatch = useAppDispatch();
+
     useEffect(() => {
         dispatch(aboutOfFilmActions.getVideo(movie.id.toString()))
-    }, [dispatch])
+    }, [dispatch,movie.id])
+
     return (
         <div className={'mainWrapper'}>
             <div className={'wrapper'}>
@@ -35,7 +38,7 @@ const AboutOfFilm: FC<IProps> = ({movie}) => {
                                                                              key={value.id}>{value.name}</Link>)
                         }
                     </div>
-                    <Rating key={movie.id} vote_average={movie.vote_average}/>
+                    <StarsRating key={movie.id} vote_average={movie.vote_average}/>
                     <p className={`${mode === 2 ? 'dark' : 'light'}`}>{movie?.status}: {movie.release_date}</p>
                     <p className={`${mode === 2 ? 'dark' : 'light'}`}>Budget: {movie.budget}$</p>
                     <div className={'flex'}>
@@ -54,4 +57,4 @@ const AboutOfFilm: FC<IProps> = ({movie}) => {
     );
 };
 
-export {AboutOfFilm};
+export {MovieInfo};

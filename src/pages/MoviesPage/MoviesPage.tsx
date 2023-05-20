@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {movieActions} from "../redux";
-import {AllFilms, Loading} from "../components";
-import './AllFilmsPage.css'
-import '../mode.css'
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
+import {MoviesList} from "../../components";
+import './MoviesPage.css'
+import '../../mode.css'
 
 
-const AllFilmsPage = () => {
+const MoviesPage = () => {
     const {page,loading} = useAppSelector(state => state.movie);
     const {mode} = useAppSelector(state => state.mode)
     const dispatch = useAppDispatch();
@@ -23,7 +23,7 @@ const AllFilmsPage = () => {
 
 
                 <div className={` ${mode === 2 ? 'bg-dark' : 'bg-light'}`}>
-                    <AllFilms/>
+                    <MoviesList/>
                     {
                         loading?<></>:
                             <div className={'pagination'}>
@@ -40,4 +40,4 @@ const AllFilmsPage = () => {
 
 };
 
-export {AllFilmsPage};
+export {MoviesPage};
