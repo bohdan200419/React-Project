@@ -34,6 +34,7 @@ const MainPage = () => {
 
     return (
         <div className={`mainPageWrapper ${mode === 2 ? 'bg-dark' : 'bg-light'}`}>
+            <h4 className={` title ${mode===2?'dark':'light'}`}>Explore the world of cinema with our search form!</h4>
             <div>
                 <form className={'searchForm'} onSubmit={handleSubmit(find)}>
                     <input className={`input ${mode === 2 ? 'input-dark' : 'input-light'}`}
@@ -43,6 +44,7 @@ const MainPage = () => {
                     </button>
                 </form>
             </div>
+            <h4 className={`desc-slider ${mode===2?'dark':'light'}`}>Discover the highest-rated films with our top-rated movie slider!</h4>
             <Sliders results={popular}/>
         </div>
     );
