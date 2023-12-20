@@ -6,7 +6,7 @@ import '../../mode.css'
 const UserInfo = () => {
     return (
             <div className={'user'}><img src={user} alt=""/>
-            <p className={'dark'}>Yura</p>
+            <p className={'dark'}>Bohdan</p>
             </div>
     );
 };
